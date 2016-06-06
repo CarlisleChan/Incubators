@@ -30,6 +30,10 @@
                 android:id="@+id/nav_seekbar"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Seekbar" />
+            <item
+                android:id="@+id/nav_pie_image_view"
+                android:icon="@drawable/ic_menu_send"
+                android:title="PieImageView" />
         </menu>
     </item>
 

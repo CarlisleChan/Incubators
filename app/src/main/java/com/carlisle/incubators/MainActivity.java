@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.carlisle.incubators.PieImageView.PieImageActivity;
 import com.carlisle.incubators.Seekbar.SeekBarActivity;
 import com.carlisle.incubators.Spannable.SpannableActivity;
 
@@ -97,6 +98,8 @@ public class MainActivity extends AppCompatActivity
             intent = new Intent(this, SpannableActivity.class);
         } else if (id == R.id.nav_seekbar) {
             intent = new Intent(this, SeekBarActivity.class);
+        } else if (id == R.id.nav_pie_image_view) {
+            intent = new Intent(this, PieImageActivity.class);
         }
 
         startActivity(intent);
