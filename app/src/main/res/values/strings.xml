@@ -6,4 +6,13 @@
 
     <string name="action_settings">Settings</string>
     <string name="verify_code">验证码: <xliff:g>%s</xliff:g></string>
+
+    <string name="download_complete">下载完成, 点击安装</string>
+    <string name="download_failed">下载失败</string>
+    <string name="downloading">正在下载中..</string>
+    <string name="update">更新</string>
+    <string name="ignore">忽略</string>
+    <string name="connect_error">网络连接超时,请检查当前网络设置</string>
+    <string name="no_need_update">已是最新版本, 无需更新</string>
+    <string name="have_new_version">有新版本可以更新</string>
 </resources>

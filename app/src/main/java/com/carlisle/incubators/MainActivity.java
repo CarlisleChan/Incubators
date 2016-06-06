@@ -18,6 +18,7 @@ import com.carlisle.incubators.GiftAnimation.GiftTestActivity;
 import com.carlisle.incubators.PieImageView.PieImageActivity;
 import com.carlisle.incubators.Seekbar.SeekBarActivity;
 import com.carlisle.incubators.Spannable.SpannableActivity;
+import com.carlisle.incubators.UpdateApp.UpdateActivity;
 import com.carlisle.incubators.VertifyCodeParse.VerifyCodeActivity;
 
 public class MainActivity extends AppCompatActivity
@@ -106,6 +107,8 @@ public class MainActivity extends AppCompatActivity
             c = GiftTestActivity.class;
         } else if (id == R.id.nav_verify_code) {
             c = VerifyCodeActivity.class;
+        } else if (id == R.id.nav_update) {
+            c = UpdateActivity.class;
         }
 
         startActivity(new Intent(this, c));

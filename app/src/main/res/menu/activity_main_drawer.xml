@@ -42,6 +42,10 @@
                 android:id="@+id/nav_verify_code"
                 android:icon="@drawable/ic_menu_send"
                 android:title="VerifyCode" />
+            <item
+                android:id="@+id/nav_update"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Update" />
         </menu>
     </item>
 

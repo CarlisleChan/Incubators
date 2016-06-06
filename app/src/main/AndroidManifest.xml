@@ -2,10 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.carlisle.incubators">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.WRITE_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -29,6 +31,9 @@
         <activity android:name=".PieImageView.PieImageActivity" />
         <activity android:name=".GiftAnimation.GiftTestActivity" />
         <activity android:name=".VertifyCodeParse.VerifyCodeActivity" />
+        <activity android:name=".UpdateApp.UpdateActivity" />
+
+        <service android:name=".UpdateApp.DownloadService" />
 
     </application>
 
