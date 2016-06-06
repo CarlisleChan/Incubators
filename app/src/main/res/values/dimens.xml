@@ -8,4 +8,10 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="pie_size">50dp</dimen>
+
+    <dimen name="fade_in_position">300dp</dimen>
+    <dimen name="fade_out_position">-1500dp</dimen>
+    <dimen name="fast_drop_down_position">30dp</dimen>
+    <dimen name="slow_drop_down_position">40dp</dimen>
+
 </resources>

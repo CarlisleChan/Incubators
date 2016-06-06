@@ -22,6 +22,7 @@
         <activity android:name=".Seekbar.SeekBarActivity" />
         <activity android:name=".Spannable.SpannableActivity" />
         <activity android:name=".PieImageView.PieImageActivity" />
+        <activity android:name=".GiftAnimation.GiftTestActivity" />
 
     </application>
 
