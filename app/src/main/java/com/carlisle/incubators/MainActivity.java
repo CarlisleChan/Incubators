@@ -18,6 +18,7 @@ import com.carlisle.incubators.GiftAnimation.GiftTestActivity;
 import com.carlisle.incubators.PieImageView.PieImageActivity;
 import com.carlisle.incubators.Seekbar.SeekBarActivity;
 import com.carlisle.incubators.Spannable.SpannableActivity;
+import com.carlisle.incubators.VertifyCodeParse.VerifyCodeActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -85,7 +86,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        Intent intent = null;
+        Class c = null;
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
@@ -96,16 +97,18 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_spannable) {
-            intent = new Intent(this, SpannableActivity.class);
+            c = SpannableActivity.class;
         } else if (id == R.id.nav_seekbar) {
-            intent = new Intent(this, SeekBarActivity.class);
+            c = SeekBarActivity.class;
         } else if (id == R.id.nav_pie_image_view) {
-            intent = new Intent(this, PieImageActivity.class);
+            c = PieImageActivity.class;
         } else if (id == R.id.nav_gift) {
-            intent = new Intent(this, GiftTestActivity.class);
+            c = GiftTestActivity.class;
+        } else if (id == R.id.nav_verify_code) {
+            c = VerifyCodeActivity.class;
         }
 
-        startActivity(intent);
+        startActivity(new Intent(this, c));
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

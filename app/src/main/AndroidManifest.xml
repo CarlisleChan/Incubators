@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.carlisle.incubators">
 
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,6 +28,7 @@
         <activity android:name=".Spannable.SpannableActivity" />
         <activity android:name=".PieImageView.PieImageActivity" />
         <activity android:name=".GiftAnimation.GiftTestActivity" />
+        <activity android:name=".VertifyCodeParse.VerifyCodeActivity" />
 
     </application>
 

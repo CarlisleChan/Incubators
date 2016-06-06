@@ -1,8 +1,8 @@
 package com.carlisle.incubators.Spannable;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -16,7 +16,7 @@ import com.carlisle.incubators.R;
  * Created by chengxin on 6/1/16.
  */
 
-public class SpannableActivity extends Activity {
+public class SpannableActivity extends AppCompatActivity {
 
     private TextView textView;
 
