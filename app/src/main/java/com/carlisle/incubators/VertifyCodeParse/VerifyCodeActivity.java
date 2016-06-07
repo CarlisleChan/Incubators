@@ -17,6 +17,8 @@ public class VerifyCodeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.verify_code);
+        setTitle("VerifyCode");
+
         codeView = (TextView) findViewById(R.id.verify_code);
         smsContent = new SMSContent(this, new Handler(), new SMSContent.GetCodeListener() {
             @Override

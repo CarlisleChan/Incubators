@@ -30,6 +30,7 @@ public class GiftTestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gift);
+        setTitle("GiftTest");
 
         giftLayout = (RelativeLayout) findViewById(R.id.rl_gift);
         giftImageView = (ImageView) findViewById(R.id.iv_gift);

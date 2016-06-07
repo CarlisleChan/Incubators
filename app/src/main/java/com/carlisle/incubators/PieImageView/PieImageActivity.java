@@ -14,5 +14,6 @@ public class PieImageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pie_image);
+        setTitle("PieImage");
     }
 }

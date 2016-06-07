@@ -24,6 +24,7 @@ public class SpannableActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spannable);
+        setTitle("Spannable");
 
         textView = (TextView) findViewById(R.id.text_view);
 
