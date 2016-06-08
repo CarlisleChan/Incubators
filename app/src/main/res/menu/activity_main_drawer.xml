@@ -27,6 +27,10 @@
                 android:id="@+id/nav_update"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Update" />
+            <item
+                android:id="@+id/nav_clearable_edit_text"
+                android:icon="@drawable/ic_menu_send"
+                android:title="ClearableEditText" />
         </menu>
     </item>
 

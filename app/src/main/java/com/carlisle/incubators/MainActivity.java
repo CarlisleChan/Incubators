@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.carlisle.incubators.ClearableEditText.ClearableEditTextActivity;
 import com.carlisle.incubators.GiftAnimation.GiftTestActivity;
 import com.carlisle.incubators.PieImageView.PieImageActivity;
 import com.carlisle.incubators.Seekbar.SeekBarActivity;
@@ -101,6 +102,8 @@ public class MainActivity extends AppCompatActivity
             c = VerifyCodeActivity.class;
         } else if (id == R.id.nav_update) {
             c = UpdateActivity.class;
+        } else if (id == R.id.nav_clearable_edit_text) {
+            c = ClearableEditTextActivity.class;
         }
 
         startActivity(new Intent(this, c));
