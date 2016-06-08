@@ -31,6 +31,10 @@
                 android:id="@+id/nav_clearable_edit_text"
                 android:icon="@drawable/ic_menu_send"
                 android:title="ClearableEditText" />
+            <item
+                android:id="@+id/nav_ios_toggle_button"
+                android:icon="@drawable/ic_menu_send"
+                android:title="IOSToggleButton" />
         </menu>
     </item>
 

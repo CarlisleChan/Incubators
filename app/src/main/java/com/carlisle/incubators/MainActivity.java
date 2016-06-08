@@ -16,6 +16,7 @@ import android.view.View;
 
 import com.carlisle.incubators.ClearableEditText.ClearableEditTextActivity;
 import com.carlisle.incubators.GiftAnimation.GiftTestActivity;
+import com.carlisle.incubators.IOSToggleButton.IOSToggleButtonActivity;
 import com.carlisle.incubators.PieImageView.PieImageActivity;
 import com.carlisle.incubators.Seekbar.SeekBarActivity;
 import com.carlisle.incubators.Spannable.SpannableActivity;
@@ -104,6 +105,8 @@ public class MainActivity extends AppCompatActivity
             c = UpdateActivity.class;
         } else if (id == R.id.nav_clearable_edit_text) {
             c = ClearableEditTextActivity.class;
+        } else if (id == R.id.nav_ios_toggle_button) {
+            c = IOSToggleButtonActivity.class;
         }
 
         startActivity(new Intent(this, c));

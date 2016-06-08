@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="IOSToggleButton">
+        <attr name="btnBorderWidth" format="dimension"></attr>
+        <attr name="btnOffBorderColor" format="reference|color"></attr>
+        <attr name="btnOffColor" format="reference|color"></attr>
+        <attr name="btnOnColor" format="reference|color"></attr>
+        <attr name="btnSpotColor" format="reference|color"></attr>
+    </declare-styleable>
+</resources>

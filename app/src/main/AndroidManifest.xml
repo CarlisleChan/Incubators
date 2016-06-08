@@ -33,6 +33,7 @@
         <activity android:name=".VertifyCodeParse.VerifyCodeActivity" />
         <activity android:name=".UpdateApp.UpdateActivity" />
         <activity android:name=".ClearableEditText.ClearableEditTextActivity" />
+        <activity android:name=".IOSToggleButton.IOSToggleButtonActivity" />
 
         <service android:name=".UpdateApp.DownloadService" />
 
