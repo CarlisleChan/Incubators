@@ -18,6 +18,7 @@ import com.carlisle.incubators.ClearableEditText.ClearableEditTextActivity;
 import com.carlisle.incubators.GiftAnimation.GiftTestActivity;
 import com.carlisle.incubators.IOSToggleButton.IOSToggleButtonActivity;
 import com.carlisle.incubators.PieImageView.PieImageActivity;
+import com.carlisle.incubators.SecretTextView.SecretTextViewActivity;
 import com.carlisle.incubators.Seekbar.SeekBarActivity;
 import com.carlisle.incubators.Spannable.SpannableActivity;
 import com.carlisle.incubators.UpdateApp.UpdateActivity;
@@ -107,6 +108,8 @@ public class MainActivity extends AppCompatActivity
             c = ClearableEditTextActivity.class;
         } else if (id == R.id.nav_ios_toggle_button) {
             c = IOSToggleButtonActivity.class;
+        } else if (id == R.id.nav_secret_text_view) {
+            c = SecretTextViewActivity.class;
         }
 
         startActivity(new Intent(this, c));

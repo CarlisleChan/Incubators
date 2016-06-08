@@ -35,6 +35,10 @@
                 android:id="@+id/nav_ios_toggle_button"
                 android:icon="@drawable/ic_menu_send"
                 android:title="IOSToggleButton" />
+            <item
+                android:id="@+id/nav_secret_text_view"
+                android:icon="@drawable/ic_menu_send"
+                android:title="SecretTextView" />
         </menu>
     </item>
 

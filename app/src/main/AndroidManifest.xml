@@ -34,6 +34,7 @@
         <activity android:name=".UpdateApp.UpdateActivity" />
         <activity android:name=".ClearableEditText.ClearableEditTextActivity" />
         <activity android:name=".IOSToggleButton.IOSToggleButtonActivity" />
+        <activity android:name=".SecretTextView.SecretTextViewActivity" />
 
         <service android:name=".UpdateApp.DownloadService" />
 
