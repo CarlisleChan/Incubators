@@ -19,6 +19,7 @@ import com.carlisle.incubators.R;
 public class SpannableActivity extends AppCompatActivity {
 
     private TextView textView;
+    private TextView leftFakeView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,28 +27,35 @@ public class SpannableActivity extends AppCompatActivity {
         setContentView(R.layout.activity_spannable);
         setTitle("Spannable");
 
-        textView = (TextView) findViewById(R.id.text_view);
+        textView = (TextView) findViewById(R.id.tv_content);
+        leftFakeView = (TextView) findViewById(R.id.tv_avatar_holder);
 
         String username = " Jake ";
         String age = " 118 ";
-        String like = " football  ";
+        String like = " football  +  fdsa";
         String content = username + age + like;
 
         Spannable spannable = new SpannableString(content);
 
         int usernameStartPosition = content.indexOf(username);
         int usernameEndPosition = usernameStartPosition + username.length();
-        spannable.setSpan(new ForegroundColorSpan(Color.WHITE), usernameStartPosition, usernameEndPosition, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        RoundedBackgroundSpan span = new RoundedBackgroundSpan();
+        span.setBackgroundColor(Color.BLUE);
+        span.setCornerRadius(50);
+        span.setLeftTopRadius(0);
+        span.setLeftBottomRadius(0);
+        spannable.setSpan(span, usernameStartPosition, usernameEndPosition, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         int ageStartPosition = content.indexOf(age);
         int ageEndPosition = ageStartPosition + age.length();
-        RoundedBackgroundSpan span = new RoundedBackgroundSpan();
+        span = new RoundedBackgroundSpan();
         span.setBackgroundColor(Color.BLUE);
         span.setCornerRadius(20);
         span.setMarginTop(10);
         span.setMarginBottom(10);
         spannable.setSpan(span, ageStartPosition, ageEndPosition, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-//
+
         spannable.setSpan(new RelativeSizeSpan(0.6f), ageStartPosition, ageEndPosition, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         spannable.setSpan(new ForegroundColorSpan(Color.GRAY), ageStartPosition, ageEndPosition, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
@@ -57,5 +65,18 @@ public class SpannableActivity extends AppCompatActivity {
 
         textView.setText(spannable);
 
+        String content1 = "     ";
+        spannable = new SpannableString(content1);
+        RoundedBackgroundSpan span1 = new RoundedBackgroundSpan();
+        span1.setBackgroundColor(Color.BLUE);
+        span1.setCornerRadius(50);
+        span1.setRightTopRadius(0);
+        span1.setRightBottomRadius(0);
+        span1.setLeftBottomRadius(10);
+        span1.setLeftTopRadius(10);
+        span1.setMarginBottom(2);
+
+        spannable.setSpan(span1, content1.indexOf(" ") + 1, content1.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        leftFakeView.setText(spannable);
     }
 }
