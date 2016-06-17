@@ -33,7 +33,7 @@ public class GiftAnimation {
 
     public void stopAnimation() {
         animatorSet.cancel();
-        giftView.setVisibility(View.GONE);
+        giftView = null;
     }
 
     public void startAnimation(final View view) {
@@ -41,7 +41,6 @@ public class GiftAnimation {
         if (animatorSet == null) {
             animatorSet = new AnimatorSet();
         }
-        stopAnimation();
 
         fadeInPosition = (int) view.getResources().getDimension(R.dimen.fade_in_position);
         fadeOutPosition = (int) view.getResources().getDimension(R.dimen.fade_out_position);

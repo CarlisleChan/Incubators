@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.carlisle.incubators.R;
@@ -18,10 +17,10 @@ import java.util.List;
 
 public class GiftTestActivity extends AppCompatActivity {
 
-    private Button addBtn;
+    private Button orderBtn;
+    private Button normalBtn;
 
-    private RelativeLayout giftLayout;
-    private ImageView giftImageView;
+    private RelativeLayout giftContainer;
 
     private List<String> gifts = new ArrayList<>();
     private int i = 0;
@@ -32,22 +31,36 @@ public class GiftTestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_gift);
         setTitle("GiftTest");
 
-        giftLayout = (RelativeLayout) findViewById(R.id.rl_gift);
-        giftImageView = (ImageView) findViewById(R.id.iv_gift);
+        giftContainer = (RelativeLayout) findViewById(R.id.rl_gift_container);
 
-        addBtn = (Button) findViewById(R.id.btn_replay);
-        addBtn.setOnClickListener(new View.OnClickListener() {
+        orderBtn = (Button) findViewById(R.id.btn_order);
+        orderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GiftHelper.getInstance().importGift(++i + "", giftLayout);
-
+                GiftHelper.getInstance(GiftTestActivity.this).stopAnimation();
+                mockOrderGift();
             }
         });
 
-        for (; i < 5; i++) {
-            gifts.add(i + "");
-        }
+        normalBtn = (Button) findViewById(R.id.btn_normal);
+        normalBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GiftHelper.getInstance(GiftTestActivity.this).stopAnimation();
+                mockGift();
+            }
+        });
 
-        GiftHelper.getInstance().importGifts(gifts, giftLayout);
+        GiftHelper.getInstance(this).setContainer(giftContainer);
+
+    }
+
+
+    private void mockOrderGift() {
+        GiftHelper.getInstance(GiftTestActivity.this).importGift(++i + "");
+    }
+
+    private void mockGift() {
+        GiftHelper.getInstance(GiftTestActivity.this).startAnimation();
     }
 }
