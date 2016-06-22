@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PieImageView">
+        <attr name="backgroundColor" format="reference|color" />
+        <attr name="forgroundColor" format="reference|color" />
+        <attr name="pieBorderColor" format="reference|color" />
+        <attr name="pieBorderWidth" format="reference|dimension" />
+        <attr name="countTime" format="reference|float" />
+    </declare-styleable>
+</resources>

@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center">
 
     <com.carlisle.incubators.PieImageView.PieImageView
-        android:layout_width="@dimen/pie_size"
-        android:layout_height="@dimen/pie_size" />
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="3dp"
+        app:countTime="5"
+        app:pieBorderWidth="2dp"
+        app:forgroundColor="@android:color/holo_blue_light"
+        android:src="@android:drawable/ic_menu_call" />
 
 </LinearLayout>

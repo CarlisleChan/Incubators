@@ -1,10 +1,14 @@
 package com.carlisle.incubators.PieImageView;
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -16,62 +20,145 @@ import com.carlisle.incubators.R;
  * Created by chengxin on 5/16/16.
  */
 public class PieImageView extends ImageView implements View.OnClickListener {
+    private final String TAG = "PieImageView";
+
     private final int ONE_HUNDRED_PERCENT = 100;
     private final int MILLI_SECOND = 1_000;
     private final int DEFAULT_TIME = 1_000;
+    private final int DEFAULT_BORDER_WIDTH = 1;
+
+    private static final Bitmap.Config BITMAP_CONFIG = Bitmap.Config.ARGB_8888;
+    private static final int COLORDRAWABLE_DIMENSION = 1;
 
     private int curPercent = ONE_HUNDRED_PERCENT;
     private float rate;
     private boolean isPlaying = false;
 
-    private int bgColorId = Color.parseColor("#A7A7A7");
-    private int forColorId = Color.parseColor("#cdff6d00");
+    private int bgColor = Color.TRANSPARENT;
+    private int forColor = Color.TRANSPARENT;
+    private int borderColor = Color.TRANSPARENT;
+
+    private int borderWidth = DEFAULT_BORDER_WIDTH;
+    private int pieSize;
+    private long countTime = DEFAULT_TIME;
+
+    private Paint bgSectorPaint = new Paint();
+    private Paint forSectorPaint = new Paint();
+    private Paint borderSectorPaint = new Paint();
+
+    private RectF rect;
 
     private Drawable drawable;
 
     public PieImageView(Context context) {
         super(context);
-        init();
     }
 
     public PieImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init();
+        init(attrs);
     }
 
     public PieImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init();
+        init(attrs);
     }
 
-    private void init() {
+    private void init(AttributeSet attrs) {
         this.setOnClickListener(this);
+
+        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.PieImageView);
+        bgColor = typedArray.getColor(R.styleable.PieImageView_backgroundColor, Color.TRANSPARENT);
+        forColor = typedArray.getColor(R.styleable.PieImageView_forgroundColor, Color.TRANSPARENT);
+        borderColor = typedArray.getColor(R.styleable.PieImageView_pieBorderColor, Color.TRANSPARENT);
+        borderWidth = typedArray.getDimensionPixelSize(R.styleable.PieImageView_pieBorderWidth, DEFAULT_BORDER_WIDTH);
+        countTime = (long) (typedArray.getFloat(R.styleable.PieImageView_countTime, 1.0f) * 1000);
+        typedArray.recycle();
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        if (getWidth() > getHeight()) {
+            pieSize = getHeight() - borderWidth;
+        } else {
+            pieSize = getWidth() - borderWidth;
+        }
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
+        // draw border
+        int left = 0;
+        int top = 0;
+        int right = pieSize + borderWidth;
+        int bottom = pieSize + borderWidth;
+
+        borderSectorPaint.setColor(borderColor);
+        borderSectorPaint.setAntiAlias(true);
+        rect = new RectF(left, top, right, bottom);
+        canvas.drawArc(rect, 0, 360, true, borderSectorPaint);
+
+        // draw background
+        bgSectorPaint.setColor(bgColor);
+        bgSectorPaint.setAntiAlias(true);
+        rect = new RectF(borderWidth, borderWidth, pieSize, pieSize);
+        canvas.drawArc(rect, 0, 360, true, bgSectorPaint);
+
+        // draw forground
+        forSectorPaint.setColor(forColor);
+        forSectorPaint.setAntiAlias(true);
+        canvas.drawArc(rect, 270, -getEndAngle(), true, forSectorPaint);
+
         super.onDraw(canvas);
-        Paint sectorPaint = new Paint();
-        sectorPaint.setColor(bgColorId);
-        sectorPaint.setAntiAlias(true);
+    }
 
-        int length = (int) getResources().getDimension(R.dimen.pie_size);
+    /**
+     * Drawable转Bitmap
+     * @param drawable
+     * @return
+     */
+    private Bitmap getBitmapFromDrawable(Drawable drawable) {
+        if (drawable == null) {
+            return null;
+        }
 
-        RectF rect = new RectF(0, 0, length, length);
-        canvas.drawArc(rect, 0, 360, true, sectorPaint);
+        if (drawable instanceof BitmapDrawable) {
+            return ((BitmapDrawable) drawable).getBitmap();
+        }
 
-        sectorPaint.setColor(forColorId);
-        rect = new RectF(0, 0, length, length);
-        canvas.drawArc(rect, 270, -getEndAngle(), true, sectorPaint);
+        try {
+            Bitmap bitmap;
 
-        int left = getPaddingLeft();
-        int top = getPaddingLeft();
-        int right = getWidth() - getPaddingRight();
-        int bottom = getWidth() - getPaddingBottom();
+            if (drawable instanceof ColorDrawable) {
+                bitmap = Bitmap.createBitmap(COLORDRAWABLE_DIMENSION, COLORDRAWABLE_DIMENSION, BITMAP_CONFIG);
+            } else {
+                bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), BITMAP_CONFIG);
+            }
 
-        drawable = getResources().getDrawable(android.R.drawable.ic_menu_camera);
-        drawable.setBounds(left, top, right, bottom);
-        drawable.draw(canvas);
+            Canvas canvas = new Canvas(bitmap);
+            drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+            drawable.draw(canvas);
+            return bitmap;
+        } catch (OutOfMemoryError e) {
+            return null;
+        }
+    }
+
+    public void setBgColor(int bgColor) {
+        this.bgColor = bgColor;
+    }
+
+    public void setForColor(int forColor) {
+        this.forColor = forColor;
+    }
+
+    public void setBorderColor(int borderColor) {
+        this.borderColor = borderColor;
+    }
+
+    public void setBorderWidth(int borderWidth) {
+        this.borderWidth = borderWidth;
     }
 
     private int getEndAngle() {
@@ -83,7 +170,7 @@ public class PieImageView extends ImageView implements View.OnClickListener {
     }
 
     public void startCountDown() {
-        startCountDown(DEFAULT_TIME);
+        startCountDown(countTime);
     }
 
     public void startCountDown(long milliTime) {
