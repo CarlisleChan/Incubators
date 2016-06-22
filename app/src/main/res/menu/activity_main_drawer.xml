@@ -39,6 +39,10 @@
                 android:id="@+id/nav_secret_text_view"
                 android:icon="@drawable/ic_menu_send"
                 android:title="SecretTextView" />
+            <item
+                android:id="@+id/nav_soft_key_board"
+                android:icon="@drawable/ic_menu_send"
+                android:title="SoftKeyBoard" />
         </menu>
     </item>
 
