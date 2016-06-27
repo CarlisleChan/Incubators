@@ -2,14 +2,10 @@ package com.carlisle.incubators.PieImageView;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -25,10 +21,7 @@ public class PieImageView extends ImageView implements View.OnClickListener {
     private final int ONE_HUNDRED_PERCENT = 100;
     private final int MILLI_SECOND = 1_000;
     private final int DEFAULT_TIME = 1_000;
-    private final int DEFAULT_BORDER_WIDTH = 1;
-
-    private static final Bitmap.Config BITMAP_CONFIG = Bitmap.Config.ARGB_8888;
-    private static final int COLORDRAWABLE_DIMENSION = 1;
+    private final int DEFAULT_BORDER_WIDTH = 0;
 
     private int curPercent = ONE_HUNDRED_PERCENT;
     private float rate;
@@ -47,8 +40,6 @@ public class PieImageView extends ImageView implements View.OnClickListener {
     private Paint borderSectorPaint = new Paint();
 
     private RectF rect;
-
-    private Drawable drawable;
 
     public PieImageView(Context context) {
         super(context);
@@ -111,38 +102,6 @@ public class PieImageView extends ImageView implements View.OnClickListener {
         canvas.drawArc(rect, 270, -getEndAngle(), true, forSectorPaint);
 
         super.onDraw(canvas);
-    }
-
-    /**
-     * Drawable转Bitmap
-     * @param drawable
-     * @return
-     */
-    private Bitmap getBitmapFromDrawable(Drawable drawable) {
-        if (drawable == null) {
-            return null;
-        }
-
-        if (drawable instanceof BitmapDrawable) {
-            return ((BitmapDrawable) drawable).getBitmap();
-        }
-
-        try {
-            Bitmap bitmap;
-
-            if (drawable instanceof ColorDrawable) {
-                bitmap = Bitmap.createBitmap(COLORDRAWABLE_DIMENSION, COLORDRAWABLE_DIMENSION, BITMAP_CONFIG);
-            } else {
-                bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), BITMAP_CONFIG);
-            }
-
-            Canvas canvas = new Canvas(bitmap);
-            drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
-            drawable.draw(canvas);
-            return bitmap;
-        } catch (OutOfMemoryError e) {
-            return null;
-        }
     }
 
     public void setBgColor(int bgColor) {
