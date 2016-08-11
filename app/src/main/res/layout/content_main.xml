@@ -18,4 +18,10 @@
         app:layout_constraintTop_toTopOf="@+id/content_main"
         android:text="Hello World!" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onDatePickerClick"
+        android:text="DatePickter" />
+
 </android.support.constraint.ConstraintLayout>

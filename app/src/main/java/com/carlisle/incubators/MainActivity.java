@@ -1,5 +1,6 @@
 package com.carlisle.incubators;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.DatePicker;
 
 import com.carlisle.incubators.ClearableEditText.ClearableEditTextActivity;
 import com.carlisle.incubators.GiftAnimation.GiftTestActivity;
@@ -22,6 +24,7 @@ import com.carlisle.incubators.SecretTextView.SecretTextViewActivity;
 import com.carlisle.incubators.Seekbar.SeekBarActivity;
 import com.carlisle.incubators.SoftKeyBoard.SoftKeyBoardActivity;
 import com.carlisle.incubators.Spannable.SpannableActivity;
+import com.carlisle.incubators.Toast.ToastUtils;
 import com.carlisle.incubators.UpdateApp.UpdateActivity;
 import com.carlisle.incubators.VertifyCodeParse.VerifyCodeActivity;
 
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setVisibility(View.GONE);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,6 +56,16 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    public void onDatePickerClick(View view) {
+        new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                String theDate = String.format("%d-%d-%d", year, monthOfYear + 1, dayOfMonth);
+                ToastUtils.showToast(MainActivity.this, theDate);
+            }
+        }, 2016, 2, 30).show();
     }
 
     @Override
