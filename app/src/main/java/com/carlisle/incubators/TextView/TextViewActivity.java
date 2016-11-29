@@ -1,4 +1,4 @@
-package com.carlisle.incubators.SecretTextView;
+package com.carlisle.incubators.TextView;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +9,7 @@ import com.carlisle.incubators.R;
 /**
  * Created by matt on 5/27/14.
  */
-public class SecretTextViewActivity extends AppCompatActivity {
+public class TextViewActivity extends AppCompatActivity {
 
     SecretTextView secretTextView;
     
@@ -17,6 +17,8 @@ public class SecretTextViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_secret_text_view);
+
+        setTitle("JustifyTest");
 
         secretTextView = (SecretTextView)findViewById(R.id.textview);
         secretTextView.setmDuration(3000);

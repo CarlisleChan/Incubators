@@ -1,4 +1,4 @@
-package com.carlisle.incubators.JustifyTextView;
+package com.carlisle.incubators.TextView;
 
 import android.content.Context;
 import android.graphics.Canvas;

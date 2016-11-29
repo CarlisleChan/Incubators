@@ -1,4 +1,4 @@
-package com.carlisle.incubators.SecretTextView;
+package com.carlisle.incubators.TextView;
 
 import android.animation.ValueAnimator;
 import android.content.Context;

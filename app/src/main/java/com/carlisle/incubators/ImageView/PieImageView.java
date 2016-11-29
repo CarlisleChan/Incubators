@@ -1,4 +1,4 @@
-package com.carlisle.incubators.PieImageView;
+package com.carlisle.incubators.ImageView;
 
 import android.content.Context;
 import android.content.res.TypedArray;

@@ -29,13 +29,13 @@
 
         <activity android:name=".Seekbar.SeekBarActivity" />
         <activity android:name=".Spannable.SpannableActivity" />
-        <activity android:name=".PieImageView.PieImageActivity" />
-        <activity android:name=".GiftAnimation.GiftTestActivity" />
+        <activity android:name=".ImageView.ImageActivity" />
+        <activity android:name=".Animation.AnimationActivity" />
         <activity android:name=".VertifyCodeParse.VerifyCodeActivity" />
         <activity android:name=".UpdateApp.UpdateActivity" />
-        <activity android:name=".ClearableEditText.ClearableEditTextActivity" />
-        <activity android:name=".IOSToggleButton.IOSToggleButtonActivity" />
-        <activity android:name=".SecretTextView.SecretTextViewActivity" />
+        <activity android:name=".EditText.EditTextActivity" />
+        <activity android:name=".Button.ButtonActivity" />
+        <activity android:name=".TextView.TextViewActivity" />
         <activity android:name=".SoftKeyBoard.SoftKeyBoardActivity" />
         <activity android:name=".PopupWindow.PopupWindowActivity" />
 

@@ -1,4 +1,4 @@
-package com.carlisle.incubators.IOSToggleButton;
+package com.carlisle.incubators.Button;
 
 import android.content.Context;
 import android.content.res.TypedArray;

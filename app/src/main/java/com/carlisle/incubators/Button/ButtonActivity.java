@@ -1,4 +1,4 @@
-package com.carlisle.incubators.IOSToggleButton;
+package com.carlisle.incubators.Button;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,10 +10,10 @@ import com.carlisle.incubators.R;
  * Created by chengxin on 6/8/16.
  */
 
-public class IOSToggleButtonActivity extends AppCompatActivity {
+public class ButtonActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ios_toggle_button);
+        setContentView(R.layout.activity_button);
     }
 }

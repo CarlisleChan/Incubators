@@ -1,4 +1,4 @@
-package com.carlisle.incubators.GiftAnimation;
+package com.carlisle.incubators.Animation;
 
 import android.content.Context;
 import android.os.CountDownTimer;

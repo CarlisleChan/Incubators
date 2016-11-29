@@ -12,9 +12,9 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="Seekbar" />
             <item
-                android:id="@+id/nav_pie_image_view"
+                android:id="@+id/nav_image_view"
                 android:icon="@drawable/ic_menu_send"
-                android:title="PieImageView" />
+                android:title="ImageView" />
             <item
                 android:id="@+id/nav_gift"
                 android:icon="@drawable/ic_menu_send"
@@ -28,17 +28,17 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="Update" />
             <item
-                android:id="@+id/nav_clearable_edit_text"
+                android:id="@+id/nav_edit_text"
                 android:icon="@drawable/ic_menu_send"
-                android:title="ClearableEditText" />
+                android:title="EditText" />
             <item
-                android:id="@+id/nav_ios_toggle_button"
+                android:id="@+id/nav_button"
                 android:icon="@drawable/ic_menu_send"
-                android:title="IOSToggleButton" />
+                android:title="Button" />
             <item
-                android:id="@+id/nav_secret_text_view"
+                android:id="@+id/nav_text_view"
                 android:icon="@drawable/ic_menu_send"
-                android:title="SecretTextView" />
+                android:title="TextView" />
             <item
                 android:id="@+id/nav_soft_key_board"
                 android:icon="@drawable/ic_menu_send"

@@ -1,4 +1,4 @@
-package com.carlisle.incubators.ClearableEditText;
+package com.carlisle.incubators.EditText;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,10 +10,10 @@ import com.carlisle.incubators.R;
  * Created by chengxin on 6/8/16.
  */
 
-public class ClearableEditTextActivity extends AppCompatActivity {
+public class EditTextActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_clearable_edit_text);
+        setContentView(R.layout.activity_edit_text);
     }
 }

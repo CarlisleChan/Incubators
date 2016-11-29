@@ -1,4 +1,4 @@
-package com.carlisle.incubators.GiftAnimation;
+package com.carlisle.incubators.Animation;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,7 +15,7 @@ import java.util.List;
  * Created by chengxin on 6/6/16.
  */
 
-public class GiftTestActivity extends AppCompatActivity {
+public class AnimationActivity extends AppCompatActivity {
 
     private Button orderBtn;
     private Button normalBtn;
@@ -28,7 +28,7 @@ public class GiftTestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gift);
+        setContentView(R.layout.activity_animation     );
         setTitle("GiftTest");
 
         giftContainer = (RelativeLayout) findViewById(R.id.rl_gift_container);
@@ -37,7 +37,7 @@ public class GiftTestActivity extends AppCompatActivity {
         orderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GiftHelper.getInstance(GiftTestActivity.this).stopAnimation();
+                GiftHelper.getInstance(AnimationActivity.this).stopAnimation();
                 mockOrderGift();
             }
         });
@@ -46,7 +46,7 @@ public class GiftTestActivity extends AppCompatActivity {
         normalBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GiftHelper.getInstance(GiftTestActivity.this).stopAnimation();
+                GiftHelper.getInstance(AnimationActivity.this).stopAnimation();
                 mockGift();
             }
         });
@@ -57,10 +57,10 @@ public class GiftTestActivity extends AppCompatActivity {
 
 
     private void mockOrderGift() {
-        GiftHelper.getInstance(GiftTestActivity.this).importGift(++i + "");
+        GiftHelper.getInstance(AnimationActivity.this).importGift(++i + "");
     }
 
     private void mockGift() {
-        GiftHelper.getInstance(GiftTestActivity.this).startAnimation();
+        GiftHelper.getInstance(AnimationActivity.this).startAnimation();
     }
 }

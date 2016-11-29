@@ -1,4 +1,4 @@
-package com.carlisle.incubators.GiftAnimation;
+package com.carlisle.incubators.Animation;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;

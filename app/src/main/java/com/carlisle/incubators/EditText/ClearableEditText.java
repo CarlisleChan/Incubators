@@ -1,4 +1,4 @@
-package com.carlisle.incubators.ClearableEditText;
+package com.carlisle.incubators.EditText;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;

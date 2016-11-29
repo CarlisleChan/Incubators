@@ -15,16 +15,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
-
-import com.carlisle.incubators.ClearableEditText.ClearableEditTextActivity;
-import com.carlisle.incubators.GiftAnimation.GiftTestActivity;
-import com.carlisle.incubators.IOSToggleButton.IOSToggleButtonActivity;
-import com.carlisle.incubators.PieImageView.PieImageActivity;
+import com.carlisle.incubators.Animation.AnimationActivity;
+import com.carlisle.incubators.Button.ButtonActivity;
+import com.carlisle.incubators.EditText.EditTextActivity;
+import com.carlisle.incubators.ImageView.ImageActivity;
 import com.carlisle.incubators.PopupWindow.PopupWindowActivity;
-import com.carlisle.incubators.SecretTextView.SecretTextViewActivity;
 import com.carlisle.incubators.Seekbar.SeekBarActivity;
 import com.carlisle.incubators.SoftKeyBoard.SoftKeyBoardActivity;
 import com.carlisle.incubators.Spannable.SpannableActivity;
+import com.carlisle.incubators.TextView.TextViewActivity;
 import com.carlisle.incubators.Toast.ToastUtils;
 import com.carlisle.incubators.UpdateApp.UpdateActivity;
 import com.carlisle.incubators.VertifyCodeParse.VerifyCodeActivity;
@@ -45,13 +44,15 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                        .setAction("Action", null)
+                        .show();
             }
         });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle =
+                new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open,
+                        R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
@@ -112,20 +113,20 @@ public class MainActivity extends AppCompatActivity
             c = SpannableActivity.class;
         } else if (id == R.id.nav_seekbar) {
             c = SeekBarActivity.class;
-        } else if (id == R.id.nav_pie_image_view) {
-            c = PieImageActivity.class;
+        } else if (id == R.id.nav_image_view) {
+            c = ImageActivity.class;
         } else if (id == R.id.nav_gift) {
-            c = GiftTestActivity.class;
+            c = AnimationActivity.class;
         } else if (id == R.id.nav_verify_code) {
             c = VerifyCodeActivity.class;
         } else if (id == R.id.nav_update) {
             c = UpdateActivity.class;
-        } else if (id == R.id.nav_clearable_edit_text) {
-            c = ClearableEditTextActivity.class;
-        } else if (id == R.id.nav_ios_toggle_button) {
-            c = IOSToggleButtonActivity.class;
-        } else if (id == R.id.nav_secret_text_view) {
-            c = SecretTextViewActivity.class;
+        } else if (id == R.id.nav_edit_text) {
+            c = EditTextActivity.class;
+        } else if (id == R.id.nav_button) {
+            c = ButtonActivity.class;
+        } else if (id == R.id.nav_text_view) {
+            c = TextViewActivity.class;
         } else if (id == R.id.nav_soft_key_board) {
             c = SoftKeyBoardActivity.class;
         } else if (id == R.id.nav_popup_window) {
