@@ -20,6 +20,7 @@ import com.carlisle.incubators.ClearableEditText.ClearableEditTextActivity;
 import com.carlisle.incubators.GiftAnimation.GiftTestActivity;
 import com.carlisle.incubators.IOSToggleButton.IOSToggleButtonActivity;
 import com.carlisle.incubators.PieImageView.PieImageActivity;
+import com.carlisle.incubators.PopupWindow.PopupWindowActivity;
 import com.carlisle.incubators.SecretTextView.SecretTextViewActivity;
 import com.carlisle.incubators.Seekbar.SeekBarActivity;
 import com.carlisle.incubators.SoftKeyBoard.SoftKeyBoardActivity;
@@ -127,6 +128,8 @@ public class MainActivity extends AppCompatActivity
             c = SecretTextViewActivity.class;
         } else if (id == R.id.nav_soft_key_board) {
             c = SoftKeyBoardActivity.class;
+        } else if (id == R.id.nav_popup_window) {
+            c = PopupWindowActivity.class;
         }
 
         startActivity(new Intent(this, c));

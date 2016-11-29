@@ -36,8 +36,8 @@
         <activity android:name=".ClearableEditText.ClearableEditTextActivity" />
         <activity android:name=".IOSToggleButton.IOSToggleButtonActivity" />
         <activity android:name=".SecretTextView.SecretTextViewActivity" />
-        <activity
-            android:name=".SoftKeyBoard.SoftKeyBoardActivity" />
+        <activity android:name=".SoftKeyBoard.SoftKeyBoardActivity" />
+        <activity android:name=".PopupWindow.PopupWindowActivity" />
 
         <service android:name=".UpdateApp.DownloadService" />
 

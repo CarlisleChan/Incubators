@@ -43,6 +43,10 @@
                 android:id="@+id/nav_soft_key_board"
                 android:icon="@drawable/ic_menu_send"
                 android:title="SoftKeyBoard" />
+            <item
+                android:id="@+id/nav_popup_window"
+                android:icon="@drawable/ic_menu_send"
+                android:title="PopupWindow" />
         </menu>
     </item>
 
